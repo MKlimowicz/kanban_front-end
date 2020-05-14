@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Note list</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Status</th>
+        <th>Project</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let note of notes | async">
+        <td>{{note.id}}</td>
+        <td>{{note.title}}</td>
+        <td>{{note.content}}</td>
+        <td>{{note.nameCategory}}</td>
+        <td>{{note.projectName}}</td>
+        <!--        <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>-->
+        <!--          <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button>-->
+        <!--        </td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
