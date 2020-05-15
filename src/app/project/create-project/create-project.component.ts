@@ -57,10 +57,15 @@ export class CreateProjectComponent implements OnInit {
 
   savePersonForProject(id: number) {
     this.checkedPerson.forEach(value => {
-      this.personsForProject.push({personId: id, projectId: value.id});
+      console.log({projectId: id, personId: value.id});
+      this.personsForProject.push({projectId: id, personId: value.id});
     });
-
-    console.log(this.personsForProject);
+    this.projectService
+      .addPersonsForProject(this.personsForProject)
+      .subscribe(
+        data => console.log(data),
+        error => console.log(error)
+      );
   }
 
   addPersonToList(person: Person) {

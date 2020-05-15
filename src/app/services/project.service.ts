@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Project} from '../model/Project';
+import {PersonForProject} from '../model/PersonForProject';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,7 @@ export class ProjectService {
     return this.http.get(this.baseUrlProject + '/persons/' + idProject);
   }
 
+  addPersonsForProject(personsForProject: Array<PersonForProject>) {
+    return this.http.post(this.baseUrlProject + '/addPersons', personsForProject);
+  }
 }
